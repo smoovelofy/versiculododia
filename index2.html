@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versículo Randômico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #verse {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        #reference {
+            font-size: 1.2em;
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="verse"></div>
+    <div id="reference"></div>
+
+    <script>
+        const verses = [
+            { text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito.", reference: "João 3:16" },
+            { text: "O Senhor é o meu pastor, nada me faltará.", reference: "Salmos 23:1" },
+            { text: "Tudo posso naquele que me fortalece.", reference: "Filipenses 4:13" },
+            { text: "E sabemos que todas as coisas cooperam para o bem daqueles que amam a Deus.", reference: "Romanos 8:28" },
+            { text: "Lâmpada para os meus pés é tua palavra e luz, para o meu caminho.", reference: "Salmos 119:105" },
+            { text: "Entrega o teu caminho ao Senhor; confia nele, e ele tudo fará.", reference: "Salmos 37:5" }
+        ];
+
+        function displayRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            const verse = verses[randomIndex];
+            document.getElementById("verse").textContent = verse.text;
+            document.getElementById("reference").textContent = verse.reference;
+        }
+
+        // Exibe o versículo automaticamente ao carregar a página
+        displayRandomVerse();
+    </script>
+</body>
+</html>
